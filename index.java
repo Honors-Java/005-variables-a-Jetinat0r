@@ -1,5 +1,21 @@
+int colorR = 130;
+int colorG = 220;
+int colorB = 40;
+int bgColor = 255;
+int strokeColor = 0;
+int canvasSize = 500;
+
+int posx1 = 125;
+int posx2 = 275;
+int posy1 = 125;
+int posy2 = 275;
+int radius = 100;
+
+int shrinkMultiplier = 2;
+
 void setup() {
-	size(500, 500);
+	size(canvasSize, canvasSize);
+  ellipseMode(CENTER);
 }
 
 void draw() {
@@ -15,11 +31,16 @@ void draw() {
 // For example, “variable1 = variable1 + 2;”. 
 // Try different expressions and see what happens!
 
-  background(255);
-  stroke(0);
-  fill(175);
+  background(bgColor);
+  stroke(strokeColor);
+  fill(colorR, colorG, colorB);
 
-
+  ellipse(posx1, posy1, radius, radius);
+  ellipse(posx2, posy1, radius, radius);
+  ellipse(posx1, posy2, radius, radius);
+  ellipse(posx2, posy2, radius, radius);
   
- 
+
+  //remove this to see the circles exist for more than half a second lol
+  radius /= shrinkMultiplier;
 }
